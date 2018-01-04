@@ -1,12 +1,25 @@
 ﻿# ReportGit
 This is my ReportGit
-1. Sơ đồ tổng quan về hệ thống Git.
-- Git là tên gọi của một Hệ thống quản lý phiên bản phân tán (Distributed Version Control System – DVCS) là một trong những hệ thống quản lý phiên bản phân tán phổ biến nhất hiện nay.
-- DVCS nghĩa là hệ thống giúp mỗi máy tính có thể lưu trữ nhiều phiên bản khác nhau của một mã nguồn được nhân bản (clone) từ một kho chứa mã nguồn (repository), mỗi thay đổi vào mã nguồn trên máy tính sẽ có thể ủy thác (commit) rồi đưa lên máy chủ nơi đặt kho chứa chính. Và một máy tính khác (nếu họ có quyền truy cập) cũng có thể clone lại mã nguồn từ kho chứa hoặc clone lại một tập hợp các thay đổi mới nhất trên máy tính kia. Trong Git, thư mục làm việc trên máy tính gọi là Working Tree.
- https://imgur.com/a/Q4sDa
-- Tại sao nên sử dụng Git?
-  Có rất nhiều lợi thế để bạn nên sử dụng Git trong việc lập trình ngay từ hôm nay, bất kể là lập trình cái gì đi chăng nữa.
-  + Git dễ sử dụng, an toàn và nhanh chóng.
-  + Có thể giúp quy trình làm việc code theo nhóm đơn giản hơn rất nhiều bằng việc kết hợp các phân nhánh (branch).
-  + Bạn có thể làm việc ở bất cứ đâu vì chỉ cần clone mã nguồn từ kho chứa hoặc clone một phiên bản thay đổi nào đó từ kho chứa, hoặc một nhánh nào đó từ kho chứa.
-  + Dễ dàng trong việc deployment sản phẩm.
+
+2. Các lệnh cơ bản của git
+ + Để khởi tạo Git trong một repository (repo), bạn chỉ cần gõ câu lệnh sau. Nếu bạn không khởi tạo Git, bạn không thể sử dụng bất kì các câu lệnh Git nào cả.
+    Cú pháp : git init
+
+
+ + Sao chép (clone) một repository
+   - Để clone 1 repository có sẵn ở trên máy cục bộ, bạn hãy sử dụng dòng lệnh sau:
+      Cú pháp : git clone /đường-dẫn-đến/repository/
+
+   - Nếu repository đó ở máy chủ khác thì bạn hãy gõ dòng lệnh sau:
+      Cú pháp : git clone tênusername@địachỉmáychủ:/đường-dẫn-đến/repository
+
+
+   - Trên máy local, kho mã nguồn của bạn sẽ chứa 3 cây “trees” được quản lý bởi git.1)thứ nhất chính là thư mục làm việc của bạn Working Directory, mà chứa các file bạn làm việc. 2) thứ 2 là bộ chỉ mục Index mà nó chứa các giai đoạn phát triển các phiên bản và 3) cuối cùng là Head trỏ đến phiên bản mà bạn đánh dấu lần cuối cùng.
+       https://imgur.com/a/LoSVw
+     Để đánh dấu thay đổi và đưa mã nguồn vào bộ Index, sử dụng:
+     Cú pháp: git add <tên-tập-tin>
+     hoặc
+     Cú pháp : git add *
+
+   - Để thật sự commit những thay đổi, bạn sử dụng:
+     Cú pháp: git commit -m "Ghi chú Commit"
